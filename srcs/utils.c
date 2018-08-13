@@ -6,7 +6,7 @@
 /*   By: jfarinha <jfarinha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 06:11:12 by jfarinha          #+#    #+#             */
-/*   Updated: 2018/07/19 17:39:09 by jfarinha         ###   ########.fr       */
+/*   Updated: 2018/07/22 13:13:21 by jfarinha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,16 @@ void	ko_msg(int b)
 		ft_putendl("KO");
 		exit(0);
 	}
+}
+
+int			checker(t_memory *memory)
+{
+	ko_msg(memory->b != NULL);
+	while (memory->a && memory->a->next)
+	{
+		if (memory->a->val > memory->a->next->val)
+			return (1);
+		memory->a = memory->a->next;
+	}
+	return (0);
 }

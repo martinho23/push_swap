@@ -6,7 +6,7 @@
 /*   By: jfarinha <jfarinha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 15:49:47 by jfarinha          #+#    #+#             */
-/*   Updated: 2018/07/19 17:37:12 by jfarinha         ###   ########.fr       */
+/*   Updated: 2018/08/12 09:29:34 by jfarinha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
  #define PUSH_SWAP_H
  #include "../includes/libft.h"
  #include <stdlib.h>
+ /*
+ **Macros
+ */
+ #define AB 0
+ #define A 1
+ #define B 2
  /*
  **Structs data
  */
@@ -34,6 +40,7 @@
  void				delval(t_stack **val_to_del);
  void				add(t_stack **stack, int val);
  void				delall(t_stack **stack_to_del);
+ void				push_back(t_stack **stack, int val);
  /*
  **	functions_base.c
  */
@@ -46,6 +53,7 @@
  */
  void				error_msg(int b);
  void				ko_msg(int b);
+ int				checker(t_memory *memory);
  /*
  **load.c
  */
@@ -57,4 +65,8 @@
  void				swap_handler(char *cmd, t_memory *stack);
  void				revrot_handler(char *cmd, t_memory *stack);
  void				rotate_handler(char *cmd, t_memory *stack);
+ /*
+ **print_cmd.c
+ */
+ void				print_swap(t_memory *memory, int b);
 #endif

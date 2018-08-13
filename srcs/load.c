@@ -6,7 +6,7 @@
 /*   By: jfarinha <jfarinha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 20:32:16 by jfarinha          #+#    #+#             */
-/*   Updated: 2018/07/19 17:46:56 by jfarinha         ###   ########.fr       */
+/*   Updated: 2018/07/22 11:10:09 by jfarinha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_stack			*load_stack(int argc, char **argv)
 			tmp = ft_atoim(vals[j]);
 			if (tmp > INTMAX || tmp < INTMIN || !ft_strisint(vals[j]))
 				return (NULL);
-			add(&a, (int)tmp);
+			push_back(&a, (int)tmp);
 			j++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: jfarinha <jfarinha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:54:27 by jfarinha          #+#    #+#             */
-/*   Updated: 2018/07/15 09:25:19 by jfarinha         ###   ########.fr       */
+/*   Updated: 2018/07/22 11:31:51 by jfarinha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,18 @@ void		delval(t_stack **val_to_del)
 		*val_to_del = (*val_to_del)->next;
 		free(tmp);
 		tmp = NULL;
+	}
+}
+
+void		push_back(t_stack **stack, int val)
+{
+	t_stack	*tmp;
+
+	tmp = new(val);
+	if (tmp)
+	{
+		while (*stack)
+			stack = &(*stack)->next;
+		*stack = tmp;
 	}
 }
