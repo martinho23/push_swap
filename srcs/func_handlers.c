@@ -6,7 +6,7 @@
 /*   By: jfarinha <jfarinha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/19 06:32:54 by jfarinha          #+#    #+#             */
-/*   Updated: 2018/07/19 19:49:03 by jfarinha         ###   ########.fr       */
+/*   Updated: 2018/09/15 18:04:35 by jfarinha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,17 @@ void	pop_handler(char *cmd, t_memory *stack)
 	op = ft_getindice("ab", *cmd);
 	error_msg(op == -1);
 	if (op == 0)
+	{
 		pop(&stack->a, &stack->b);
+		stack->size_a++;
+		stack->size_b--;
+	}
 	else
+	{
 		pop(&stack->b, &stack->a);
+		stack->size_a--;
+		stack->size_b++;
+	}
 }
 
 void	rotate_handler(char *cmd, t_memory *stack)

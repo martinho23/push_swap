@@ -6,13 +6,14 @@
 /*   By: jfarinha <jfarinha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/18 07:20:28 by jfarinha          #+#    #+#             */
-/*   Updated: 2018/07/22 13:07:28 by jfarinha         ###   ########.fr       */
+/*   Updated: 2018/09/15 18:57:27 by jfarinha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include "../includes/push_swap.h"
 #include "../includes/get_next_line.h"
+#include <stdio.h>
 
 static void	init(void (*f[4])(char*, t_memory*))
 {
@@ -52,6 +53,7 @@ int			main(int argc, char **argv)
 	memory.a = load_stack(argc, argv);
 	memory.b = NULL;
 	cmd = NULL;
+	get_info(&memory);
 	while (get_next_line(0, &cmd))
 	{
 		proc_stack(cmd, &memory);

@@ -6,7 +6,7 @@
 /*   By: jfarinha <jfarinha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 20:32:16 by jfarinha          #+#    #+#             */
-/*   Updated: 2018/07/22 11:10:09 by jfarinha         ###   ########.fr       */
+/*   Updated: 2018/09/15 17:58:26 by jfarinha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,29 @@ static	int		douplicate_checker(t_stack *stack)
 		stack = stack->next;
 	}
 	return (0);
+}
+
+void			get_info(t_memory *memory)
+{
+	t_stack	*tmp;
+
+	if (memory->a)
+	{
+		memory->size_a = 1;
+		memory->size_b = 0;
+		memory->min = memory->a->val;
+		memory->max = memory->a->val;
+		tmp = memory->a->next;
+	}
+	while (tmp)
+	{
+		if (tmp->val < memory->min)
+			memory->min =  tmp->val;
+		if (tmp->val > memory->max)
+			memory->max = tmp->val;
+		memory->size_a++;
+		tmp = tmp->next;
+	}
 }
 
 t_stack			*load_stack(int argc, char **argv)
